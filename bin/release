@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+bin/clean
+bin/build
+mkdir -p dist
+cp -r generated/* dist
+
+git add -A
+git commit -mv "Release $1"
+git tag $1

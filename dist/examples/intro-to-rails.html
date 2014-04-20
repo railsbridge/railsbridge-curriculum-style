@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Intro To Rails - Intro To Rails</title>
+<link href="/css/doc_page.css" rel="stylesheet">
+</head>
+<body>
+<nav class="top cf" role="navigation">
+  <div class="navbar-header cf title"><a href="/#"><span class="brand">RailsBridge </span>Intro To Rails</a></div>
+  <ul class="navbar-nav nav">
+    <li><ul class="flags">
+      <li><a href="http://docs.railsbridge.org"><img src="/images/flags/US.png"></a></li>
+      <li><a href="http://es.railsbridge.org"><img src="/images/flags/ES.png"></a></li>
+    </ul></li>
+    <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">sites</a><ul class="dropdown-menu">
+      <li><a href="/docs/">Docs</a></li>
+      <li><a href="/frontend/">Frontend</a></li>
+      <li><a href="/installfest/">Installfest</a></li>
+      <li><a href="/intermediate-rails/">Intermediate Rails</a></li>
+      <li><a href="/intro-to-javascript/">Intro To Javascript</a></li>
+      <li class="current">Intro To Rails</li>
+      <li><a href="/javascript/">Javascript</a></li>
+      <li><a href="/learn-to-code/">Learn To Code</a></li>
+      <li><a href="/ruby/">Ruby</a></li>
+      <li><a href="/workshop/">Workshop</a></li>
+    </ul>
+    </li>
+    <li class="show-when-small"><a data-toggle-selector="#table_of_contents" href="#">toc</a></li>
+    <li><a href="intro-to-rails/src">src</a></li>
+    <li><a href="https://github.com/railsbridge/docs/blob/master/sites/en/intro-to-rails/intro-to-rails.step">git</a></li>
+</ul></nav><div class="toc page-list" id="table_of_contents">
+  <ul>
+    <li><span class="current">Intro To Rails</span></li>
+    <li><a href="/intro-to-rails/ruby_language">Ruby Language</a></li>
+    <li><a href="/intro-to-rails/getting_started">Getting Started</a></li>
+    <li><a href="/intro-to-rails/add_the_project_to_a_git_repo">Add The Project To A Git Repo</a></li>
+    <li><a href="/intro-to-rails/running_your_application_locally">Running Your Application Locally</a></li>
+    <li class="collapsable closed">
+    <a href="/intro-to-rails/creating_a_migration"><span class="toggler"><i class="fa fa-plus-square-o"></i><i class="fa fa-minus-square-o"></i></span>Creating A Migration</a><ul><li><a href="/intro-to-rails/rails_architecture">Rails Architecture</a></li></ul>
+    </li>
+    <li><a href="/intro-to-rails/CRUD_with_scaffolding">CRUD With Scaffolding</a></li>
+    <li><a href="/intro-to-rails/setting_the_default_page">Setting The Default Page</a></li>
+    <li><a href="/intro-to-rails/voting_on_topics">Voting On Topics</a></li>
+    <li><a href="/intro-to-rails/hooking_up_votes_and_topics">Hooking Up Votes And Topics</a></li>
+    <li><a href="/intro-to-rails/allow_people_to_vote">Allow People To Vote</a></li>
+    <li><a href="/intro-to-rails/redirect_to_the_topics_list_after_creating_a_new_topic">Redirect To The Topics List After Creating A New Topic</a></li>
+    <li><a href="/intro-to-rails/make_the_topic_title_a_link">Make The Topic Title A Link</a></li>
+    <li><a href="/intro-to-rails/clean_up_links_on_the_topics_list">Clean Up Links On The Topics List</a></li>
+    <li><a href="/intro-to-rails/credits_and_next_steps">Credits And Next Steps</a></li>
+  </ul>
+  <h1>Other Pages</h1>
+  <ul><li><a href="/intro-to-rails/deploying_to_heroku">Deploying To Heroku</a></li></ul>
+  <span class="expand-all"><i class="fa fa-arrows-alt"></i>Expand All</span>
+</div>
+<main><h1 class="doc_title">Intro To Rails</h1>
+<div class="doc">
+  <div class="message">
+    <h3>Goal</h3>
+
+    <p>To teach you Ruby on Rails we are going to use a "Real World"
+    example. You've decided to create a voting system for you and your
+    friends to play with. You've decided at a minimum, you'd like to
+    allow users to:</p>
+
+    <ul>
+      <li>view the topics sorted by number of votes</li>
+      <li>vote on topics</li>
+      <li>create, edit, and destroy topics</li>
+    </ul>
+    <p>You've sketched up an initial screenshot of what you want it to look like:</p>
+
+    <p><img src="img/finished_app.png" alt="screenshot"></p>
+
+    <h3>Meta-Goal</h3>
+
+    <p>When you have completed today's goal of getting the basic
+    application online you should understand:</p>
+
+    <ul>
+      <li>Basic Ruby syntax</li>
+      <li>How to try your Ruby code (irb)</li>
+      <li>How to go from requirements to a new working Rails application</li>
+      <li>How to get your application online</li>
+      <li>The basic tools a RoR developer uses (source control, editor, console, local server)</li>
+    </ul>
+    <h3>Schedule</h3>
+
+    <ul>
+      <li>1-ish hour of ruby</li>
+      <li>4-ish hours of rails, broken up in 1-ish hour steps</li>
+    </ul>
+    <p>This is just a rough guideline, not a mandate. Some steps you'll go
+    over and some you'll go under. It'll all work out by the end of the
+    day... unless I really screwed something up. :D</p>
+
+    <h3>Requirements</h3>
+
+    <p>We're going to be working with:</p>
+
+    <ul>
+      <li>ruby 1.9.3, 2.0.0 or 2.1.0 installed via RVM (Mac or Linux) or RailsInstaller (Mac or Windows)</li>
+      <li>rails 4.0.x</li>
+      <li>bundler</li>
+      <li>sqlite</li>
+      <li>the text editor of your choice</li>
+    </ul>
+    <p>Everything should be set up the night before during our
+    install-fest. Please ensure you have everything working <em>before</em> you
+    show up for RailsBridge on Saturday.</p>
+
+    <p>You can verify that you have everything working by trying this out in your terminal:</p>
+
+    <div class="console">
+      <pre>$ irb
+&gt;&gt; 1 + 2
+=&gt; 3
+&gt;&gt; require "active_support"
+=&gt; true
+&gt;&gt; exit
+$
+      </pre>
+    </div>
+
+    <p>If you can do that, you are probably good to go.</p>
+
+    <h3>Working Effectively and Efficiently</h3>
+
+    <p>I highly recommend you do the following:</p>
+
+    <ul>
+      <li>Bring up your terminal and open 2 tabs:
+
+      <ul>
+        <li>One is for regular terminal stuffs</li>
+        <li>One will be for irb (aka rails console). We'll explain later</li>
+      </ul>
+      </li>
+      <li>Open your browser fresh or hide any windows you already have open.
+
+      <ul>
+        <li>Bring up one window with two tabs</li>
+        <li>One for this content</li>
+        <li>One for interacting with your app.</li>
+      </ul>
+      </li>
+      <li>Open your text editor and <em>do not ever close it</em>. We're not quitters.</li>
+      <li>Hide all extra applications. Turn off twitter, IM, and all other distractions.</li>
+    </ul>
+    <p>By minimizing the number of things you interact with, you reduce the
+    amount of time spent switching between them and the context lost as
+    you work through the lessons. Having 50 tabs open in your web
+    browser gets confusing and wastes time.</p>
+
+    <h3>Format</h3>
+
+    <p>Each lesson will look like this:</p>
+
+    <div style="background: white; border: 1px solid black; padding-left: 4em;">
+      <h1 class="doc_title" style="margin-top: 0em;">Step Title</h1>
+      <div class="goals">
+        <h1>Goal:</h1>
+        <p>Description of the current step.
+        </p>
+        <p>Red because big goals are scary.
+        </p>
+      </div>
+      <div class="steps">
+        <h1>Steps:</h1>
+        <pre class="term">steps to take.</pre>
+        <div class="console">
+          <pre>def code_to_write
+  1 + 1
+end</pre>
+        </div>
+        <p>Yellow because we've gotten it done, but we have no clue what's going on.
+        </p>
+      </div>
+      <div class="explanation">
+        <h1>Explanation</h1>
+        <p>Details of what the steps actually did... spell out the cause and effect.
+        </p>
+        <p>Green because we can tie everything together now.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="step next_step">
+    <h1><span class="prefix">Next Step:</span></h1>
+    <p class="link">Go on to <a class="link" href="ruby_language?back=intro-to-rails">Ruby Language</a></p>
+  </div>
+</div></main>
+
+<footer><p>RailsBridge Docs is maintained by RailsBridge volunteers.</p>
+  <p>If you find something that could be improved, please make a <a href="https://github.com/railsbridge/docs">pull request </a>or <a href="https://github.com/railsbridge/docs/issues/new">drop us a note </a>via GitHub Issues (no technical knowledge required).</p>
+  <p>Source: <a href="https://github.com/railsbridge/docs">https://github.com/railsbridge/docs</a></p></footer>
+
+
+</body></html>

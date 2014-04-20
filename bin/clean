@@ -1,0 +1,6 @@
+#!/bin/bash
+
+rm -rf generated/*
+rm -rf dist/*
+git checkout generated
+git checkout dist
