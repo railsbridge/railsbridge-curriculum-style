@@ -1,0 +1,9 @@
+#!/bin/bash
+
+mkdir -p generated/css/fonts
+mkdir -p generated/images
+
+bin/sass --sourcemap src/css/doc_page.scss generated/css/doc_page.css
+cp -r src/examples generated
+cp -r src/images generated
+cp -r src/css/fonts generated/css
