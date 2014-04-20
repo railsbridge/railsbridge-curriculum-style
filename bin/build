@@ -1,0 +1,5 @@
+#!/bin/bash
+
+bin/sass --sourcemap src/css/doc_page.scss generated/css/doc_page.css
+cp -r src/examples generated
+cp -r src/images generated

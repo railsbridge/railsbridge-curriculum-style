@@ -1,0 +1,2 @@
+#!/bin/bash
+ruby -run -e httpd generated -p 4000

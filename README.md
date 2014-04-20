@@ -39,9 +39,8 @@ Conduct](CODE_OF_CONDUCT.md).
 ### Adding Features
 1. Run `bin/serve` to launch a web server in the `generated` directory
 1. Change the code
+1. Ensure an example demonstrating your change exists in the `/src/examples`
 1. Run `bin/build` to compile assets into the `generated` directory
-1. Ensure there's an example demonstrating your change in the `/src/examples`
-   directory
 1. Spot check to prove everything is amazing.
 1. Submit a pull request describing your awesome feature.
 
